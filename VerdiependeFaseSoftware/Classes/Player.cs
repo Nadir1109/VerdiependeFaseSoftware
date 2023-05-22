@@ -15,6 +15,7 @@ namespace VerdiependeFaseSoftware.Classes
         public int defend { get; set; }
         public string position { get; set; }
         public string nationality { get; set; }
+        public int rating { get; set; }
         public string teamID { get; set; }
 
 

@@ -8,5 +8,8 @@ namespace VerdiependeFaseSoftware.Classes
 {
     public class League
     {
+        public int leagueID { get; set; }
+        public string leagueName { get; set; }
+        public string country { get; set; }
     }
 }
