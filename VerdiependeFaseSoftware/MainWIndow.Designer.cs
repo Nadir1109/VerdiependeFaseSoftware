@@ -1,6 +1,6 @@
 ﻿namespace VerdiependeFaseSoftware
 {
-    partial class Form1
+    partial class MainWIndow
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,13 +50,17 @@
             this.label10 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.githubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.githubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gamesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.game1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.game2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.game3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.playerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.playerOverviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.teamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.leagueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -81,6 +85,57 @@
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Player01";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(5, 242);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(183, 34);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Zoeken";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 141);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 25);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Club";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(6, 172);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(182, 33);
+            this.comboBox2.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 25);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Competitie";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(6, 83);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(182, 33);
+            this.comboBox1.TabIndex = 5;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(214, 30);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(339, 185);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // label7
             // 
@@ -108,57 +163,6 @@
             this.label9.Size = new System.Drawing.Size(62, 25);
             this.label9.TabIndex = 2;
             this.label9.Text = "Attack";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(214, 30);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(339, 185);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 83);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(182, 33);
-            this.comboBox1.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 25);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Competitie";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 141);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 25);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Club";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(6, 172);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(182, 33);
-            this.comboBox2.TabIndex = 7;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(5, 242);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(183, 34);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Zoeken";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -261,7 +265,10 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.infoToolStripMenuItem,
-            this.gamesToolStripMenuItem});
+            this.gamesToolStripMenuItem,
+            this.playerToolStripMenuItem,
+            this.teamToolStripMenuItem,
+            this.leagueToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(2087, 33);
@@ -278,11 +285,11 @@
             this.infoToolStripMenuItem.Size = new System.Drawing.Size(60, 29);
             this.infoToolStripMenuItem.Text = "Info";
             // 
-            // exitToolStripMenuItem
+            // aboutToolStripMenuItem
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(167, 34);
-            this.exitToolStripMenuItem.Text = "Exit";
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(167, 34);
+            this.aboutToolStripMenuItem.Text = "About";
             // 
             // githubToolStripMenuItem
             // 
@@ -290,11 +297,11 @@
             this.githubToolStripMenuItem.Size = new System.Drawing.Size(167, 34);
             this.githubToolStripMenuItem.Text = "Github";
             // 
-            // aboutToolStripMenuItem
+            // exitToolStripMenuItem
             // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(167, 34);
-            this.aboutToolStripMenuItem.Text = "About";
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(167, 34);
+            this.exitToolStripMenuItem.Text = "Exit";
             // 
             // gamesToolStripMenuItem
             // 
@@ -309,22 +316,49 @@
             // game1ToolStripMenuItem
             // 
             this.game1ToolStripMenuItem.Name = "game1ToolStripMenuItem";
-            this.game1ToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.game1ToolStripMenuItem.Size = new System.Drawing.Size(170, 34);
             this.game1ToolStripMenuItem.Text = "Game1";
             // 
             // game2ToolStripMenuItem
             // 
             this.game2ToolStripMenuItem.Name = "game2ToolStripMenuItem";
-            this.game2ToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.game2ToolStripMenuItem.Size = new System.Drawing.Size(170, 34);
             this.game2ToolStripMenuItem.Text = "Game2";
             // 
             // game3ToolStripMenuItem
             // 
             this.game3ToolStripMenuItem.Name = "game3ToolStripMenuItem";
-            this.game3ToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.game3ToolStripMenuItem.Size = new System.Drawing.Size(170, 34);
             this.game3ToolStripMenuItem.Text = "Game3";
             // 
-            // Form1
+            // playerToolStripMenuItem
+            // 
+            this.playerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.playerOverviewToolStripMenuItem});
+            this.playerToolStripMenuItem.Name = "playerToolStripMenuItem";
+            this.playerToolStripMenuItem.Size = new System.Drawing.Size(75, 29);
+            this.playerToolStripMenuItem.Text = "Player";
+            // 
+            // playerOverviewToolStripMenuItem
+            // 
+            this.playerOverviewToolStripMenuItem.Name = "playerOverviewToolStripMenuItem";
+            this.playerOverviewToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.playerOverviewToolStripMenuItem.Text = "Player Overview";
+            this.playerOverviewToolStripMenuItem.Click += new System.EventHandler(this.playerOverviewToolStripMenuItem_Click);
+            // 
+            // teamToolStripMenuItem
+            // 
+            this.teamToolStripMenuItem.Name = "teamToolStripMenuItem";
+            this.teamToolStripMenuItem.Size = new System.Drawing.Size(69, 29);
+            this.teamToolStripMenuItem.Text = "Team";
+            // 
+            // leagueToolStripMenuItem
+            // 
+            this.leagueToolStripMenuItem.Name = "leagueToolStripMenuItem";
+            this.leagueToolStripMenuItem.Size = new System.Drawing.Size(84, 29);
+            this.leagueToolStripMenuItem.Text = "League";
+            // 
+            // MainWIndow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -333,7 +367,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "MainWIndow";
             this.Text = "Form1";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -379,5 +413,9 @@
         private ToolStripMenuItem game1ToolStripMenuItem;
         private ToolStripMenuItem game2ToolStripMenuItem;
         private ToolStripMenuItem game3ToolStripMenuItem;
+        private ToolStripMenuItem playerToolStripMenuItem;
+        private ToolStripMenuItem playerOverviewToolStripMenuItem;
+        private ToolStripMenuItem teamToolStripMenuItem;
+        private ToolStripMenuItem leagueToolStripMenuItem;
     }
 }

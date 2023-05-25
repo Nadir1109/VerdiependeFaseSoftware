@@ -10,7 +10,7 @@ namespace VerdiependeFaseSoftware
 {
     public class DatabaseConnection
     {
-        private string connectionString = "Data Source=YOUR_SERVER_NAME;Initial Catalog=YOUR_DATABASE_NAME;Integrated Security=True";
+        private string connectionString = "Data Source=localhost;Initial Catalog=football;Integrated Security=True";
         private SqlConnection connection;
 
         public DatabaseConnection()
