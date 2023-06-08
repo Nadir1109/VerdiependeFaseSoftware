@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             groupBox2=new GroupBox();
-            button1=new Button();
+            lbxPlayer1=new ListBox();
+            btnGetRandomPlayer1=new Button();
             label2=new Label();
             cmxClubPlayer1=new ComboBox();
             label1=new Label();
             cmxLeaguePlayer1=new ComboBox();
-            pictureBox1=new PictureBox();
-            label7=new Label();
-            label8=new Label();
-            label9=new Label();
+            lblControl=new Label();
+            lblDefend=new Label();
+            lblAttack=new Label();
             groupBox1=new GroupBox();
             button2=new Button();
             label3=new Label();
@@ -61,8 +61,8 @@
             playerOverviewToolStripMenuItem=new ToolStripMenuItem();
             teamToolStripMenuItem=new ToolStripMenuItem();
             leagueToolStripMenuItem=new ToolStripMenuItem();
+            lblPlayerName1=new Label();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             menuStrip1.SuspendLayout();
@@ -70,111 +70,113 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(button1);
+            groupBox2.Controls.Add(lblPlayerName1);
+            groupBox2.Controls.Add(lbxPlayer1);
+            groupBox2.Controls.Add(btnGetRandomPlayer1);
             groupBox2.Controls.Add(label2);
             groupBox2.Controls.Add(cmxClubPlayer1);
             groupBox2.Controls.Add(label1);
             groupBox2.Controls.Add(cmxLeaguePlayer1);
-            groupBox2.Controls.Add(pictureBox1);
-            groupBox2.Controls.Add(label7);
-            groupBox2.Controls.Add(label8);
-            groupBox2.Controls.Add(label9);
-            groupBox2.Location=new Point(54, 161);
+            groupBox2.Controls.Add(lblControl);
+            groupBox2.Controls.Add(lblDefend);
+            groupBox2.Controls.Add(lblAttack);
+            groupBox2.Location=new Point(68, 201);
             groupBox2.Margin=new Padding(2);
             groupBox2.Name="groupBox2";
             groupBox2.Padding=new Padding(2);
-            groupBox2.Size=new Size(478, 287);
+            groupBox2.Size=new Size(598, 359);
             groupBox2.TabIndex=8;
             groupBox2.TabStop=false;
             groupBox2.Text="Player01";
             // 
-            // button1
+            // lbxPlayer1
             // 
-            button1.Location=new Point(4, 194);
-            button1.Margin=new Padding(2);
-            button1.Name="button1";
-            button1.Size=new Size(146, 27);
-            button1.TabIndex=9;
-            button1.Text="Zoeken";
-            button1.UseVisualStyleBackColor=true;
+            lbxPlayer1.FormattingEnabled=true;
+            lbxPlayer1.ItemHeight=25;
+            lbxPlayer1.Location=new Point(236, 29);
+            lbxPlayer1.Name="lbxPlayer1";
+            lbxPlayer1.Size=new Size(341, 204);
+            lbxPlayer1.TabIndex=10;
+            // 
+            // btnGetRandomPlayer1
+            // 
+            btnGetRandomPlayer1.Location=new Point(4, 242);
+            btnGetRandomPlayer1.Margin=new Padding(2);
+            btnGetRandomPlayer1.Name="btnGetRandomPlayer1";
+            btnGetRandomPlayer1.Size=new Size(182, 34);
+            btnGetRandomPlayer1.TabIndex=9;
+            btnGetRandomPlayer1.Text="Zoeken";
+            btnGetRandomPlayer1.UseVisualStyleBackColor=true;
+            btnGetRandomPlayer1.Click+=btnGetRandomPlayer1_Click;
             // 
             // label2
             // 
             label2.AutoSize=true;
-            label2.Location=new Point(5, 113);
+            label2.Location=new Point(6, 141);
             label2.Margin=new Padding(2, 0, 2, 0);
             label2.Name="label2";
-            label2.Size=new Size(39, 20);
+            label2.Size=new Size(48, 25);
             label2.TabIndex=8;
             label2.Text="Club";
             // 
             // cmxClubPlayer1
             // 
             cmxClubPlayer1.FormattingEnabled=true;
-            cmxClubPlayer1.Location=new Point(5, 138);
+            cmxClubPlayer1.Location=new Point(6, 172);
             cmxClubPlayer1.Margin=new Padding(2);
             cmxClubPlayer1.Name="cmxClubPlayer1";
-            cmxClubPlayer1.Size=new Size(146, 28);
+            cmxClubPlayer1.Size=new Size(182, 33);
             cmxClubPlayer1.TabIndex=7;
             // 
             // label1
             // 
             label1.AutoSize=true;
-            label1.Location=new Point(5, 42);
+            label1.Location=new Point(6, 52);
             label1.Margin=new Padding(2, 0, 2, 0);
             label1.Name="label1";
-            label1.Size=new Size(83, 20);
+            label1.Size=new Size(99, 25);
             label1.TabIndex=6;
             label1.Text="Competitie";
             // 
             // cmxLeaguePlayer1
             // 
             cmxLeaguePlayer1.FormattingEnabled=true;
-            cmxLeaguePlayer1.Location=new Point(5, 66);
+            cmxLeaguePlayer1.Location=new Point(6, 82);
             cmxLeaguePlayer1.Margin=new Padding(2);
             cmxLeaguePlayer1.Name="cmxLeaguePlayer1";
-            cmxLeaguePlayer1.Size=new Size(146, 28);
+            cmxLeaguePlayer1.Size=new Size(182, 33);
             cmxLeaguePlayer1.TabIndex=5;
             cmxLeaguePlayer1.SelectedIndexChanged+=cmxLeaguePlayer1_SelectedIndexChanged;
             // 
-            // pictureBox1
+            // lblControl
             // 
-            pictureBox1.Location=new Point(171, 24);
-            pictureBox1.Margin=new Padding(2);
-            pictureBox1.Name="pictureBox1";
-            pictureBox1.Size=new Size(271, 148);
-            pictureBox1.TabIndex=4;
-            pictureBox1.TabStop=false;
+            lblControl.AutoSize=true;
+            lblControl.Location=new Point(346, 298);
+            lblControl.Margin=new Padding(2, 0, 2, 0);
+            lblControl.Name="lblControl";
+            lblControl.Size=new Size(71, 25);
+            lblControl.TabIndex=3;
+            lblControl.Text="Control";
             // 
-            // label7
+            // lblDefend
             // 
-            label7.AutoSize=true;
-            label7.Location=new Point(288, 210);
-            label7.Margin=new Padding(2, 0, 2, 0);
-            label7.Name="label7";
-            label7.Size=new Size(58, 20);
-            label7.TabIndex=3;
-            label7.Text="Control";
+            lblDefend.AutoSize=true;
+            lblDefend.Location=new Point(432, 298);
+            lblDefend.Margin=new Padding(2, 0, 2, 0);
+            lblDefend.Name="lblDefend";
+            lblDefend.Size=new Size(70, 25);
+            lblDefend.TabIndex=0;
+            lblDefend.Text="Defend";
             // 
-            // label8
+            // lblAttack
             // 
-            label8.AutoSize=true;
-            label8.Location=new Point(362, 210);
-            label8.Margin=new Padding(2, 0, 2, 0);
-            label8.Name="label8";
-            label8.Size=new Size(58, 20);
-            label8.TabIndex=0;
-            label8.Text="Defend";
-            // 
-            // label9
-            // 
-            label9.AutoSize=true;
-            label9.Location=new Point(203, 210);
-            label9.Margin=new Padding(2, 0, 2, 0);
-            label9.Name="label9";
-            label9.Size=new Size(51, 20);
-            label9.TabIndex=2;
-            label9.Text="Attack";
+            lblAttack.AutoSize=true;
+            lblAttack.Location=new Point(253, 298);
+            lblAttack.Margin=new Padding(2, 0, 2, 0);
+            lblAttack.Name="lblAttack";
+            lblAttack.Size=new Size(62, 25);
+            lblAttack.TabIndex=2;
+            lblAttack.Text="Attack";
             // 
             // groupBox1
             // 
@@ -187,21 +189,21 @@
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label10);
-            groupBox1.Location=new Point(806, 161);
+            groupBox1.Location=new Point(1008, 201);
             groupBox1.Margin=new Padding(2);
             groupBox1.Name="groupBox1";
             groupBox1.Padding=new Padding(2);
-            groupBox1.Size=new Size(478, 287);
+            groupBox1.Size=new Size(598, 359);
             groupBox1.TabIndex=9;
             groupBox1.TabStop=false;
             groupBox1.Text="Player02";
             // 
             // button2
             // 
-            button2.Location=new Point(4, 194);
+            button2.Location=new Point(5, 242);
             button2.Margin=new Padding(2);
             button2.Name="button2";
-            button2.Size=new Size(146, 27);
+            button2.Size=new Size(182, 34);
             button2.TabIndex=9;
             button2.Text="Zoeken";
             button2.UseVisualStyleBackColor=true;
@@ -209,77 +211,77 @@
             // label3
             // 
             label3.AutoSize=true;
-            label3.Location=new Point(5, 113);
+            label3.Location=new Point(6, 141);
             label3.Margin=new Padding(2, 0, 2, 0);
             label3.Name="label3";
-            label3.Size=new Size(39, 20);
+            label3.Size=new Size(48, 25);
             label3.TabIndex=8;
             label3.Text="Club";
             // 
             // cmxClubPlayer2
             // 
             cmxClubPlayer2.FormattingEnabled=true;
-            cmxClubPlayer2.Location=new Point(5, 138);
+            cmxClubPlayer2.Location=new Point(6, 172);
             cmxClubPlayer2.Margin=new Padding(2);
             cmxClubPlayer2.Name="cmxClubPlayer2";
-            cmxClubPlayer2.Size=new Size(146, 28);
+            cmxClubPlayer2.Size=new Size(182, 33);
             cmxClubPlayer2.TabIndex=7;
             // 
             // label4
             // 
             label4.AutoSize=true;
-            label4.Location=new Point(5, 42);
+            label4.Location=new Point(6, 52);
             label4.Margin=new Padding(2, 0, 2, 0);
             label4.Name="label4";
-            label4.Size=new Size(83, 20);
+            label4.Size=new Size(99, 25);
             label4.TabIndex=6;
             label4.Text="Competitie";
             // 
             // cmxLeaguePlayer2
             // 
             cmxLeaguePlayer2.FormattingEnabled=true;
-            cmxLeaguePlayer2.Location=new Point(5, 66);
+            cmxLeaguePlayer2.Location=new Point(6, 82);
             cmxLeaguePlayer2.Margin=new Padding(2);
             cmxLeaguePlayer2.Name="cmxLeaguePlayer2";
-            cmxLeaguePlayer2.Size=new Size(146, 28);
+            cmxLeaguePlayer2.Size=new Size(182, 33);
             cmxLeaguePlayer2.TabIndex=5;
             // 
             // pictureBox2
             // 
-            pictureBox2.Location=new Point(171, 24);
+            pictureBox2.Location=new Point(214, 30);
             pictureBox2.Margin=new Padding(2);
             pictureBox2.Name="pictureBox2";
-            pictureBox2.Size=new Size(271, 148);
+            pictureBox2.Size=new Size(339, 185);
             pictureBox2.TabIndex=4;
             pictureBox2.TabStop=false;
             // 
             // label5
             // 
             label5.AutoSize=true;
-            label5.Location=new Point(288, 210);
+            label5.Location=new Point(360, 262);
             label5.Margin=new Padding(2, 0, 2, 0);
             label5.Name="label5";
-            label5.Size=new Size(58, 20);
+            label5.Size=new Size(71, 25);
             label5.TabIndex=3;
             label5.Text="Control";
             // 
             // label6
             // 
             label6.AutoSize=true;
-            label6.Location=new Point(362, 210);
+            label6.Location=new Point(452, 262);
             label6.Margin=new Padding(2, 0, 2, 0);
             label6.Name="label6";
-            label6.Size=new Size(58, 20);
+            label6.Size=new Size(70, 25);
             label6.TabIndex=0;
             label6.Text="Defend";
             // 
             // label10
             // 
             label10.AutoSize=true;
-            label10.Location=new Point(203, 210);
+            label10.Location=new Point(254, 262);
             label10.Margin=new Padding(2, 0, 2, 0);
             label10.Name="label10";
-            label10.Size=new Size(51, 20);
+            label10.Size=new Size(62, 25);
             label10.TabIndex=2;
             label10.Text="Attack";
             // 
@@ -289,8 +291,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { infoToolStripMenuItem, gamesToolStripMenuItem, playerToolStripMenuItem, teamToolStripMenuItem, leagueToolStripMenuItem });
             menuStrip1.Location=new Point(0, 0);
             menuStrip1.Name="menuStrip1";
-            menuStrip1.Padding=new Padding(5, 2, 0, 2);
-            menuStrip1.Size=new Size(1539, 28);
+            menuStrip1.Size=new Size(1924, 33);
             menuStrip1.TabIndex=10;
             menuStrip1.Text="menuStrip1";
             // 
@@ -298,83 +299,93 @@
             // 
             infoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aboutToolStripMenuItem, githubToolStripMenuItem, exitToolStripMenuItem });
             infoToolStripMenuItem.Name="infoToolStripMenuItem";
-            infoToolStripMenuItem.Size=new Size(49, 24);
+            infoToolStripMenuItem.Size=new Size(60, 29);
             infoToolStripMenuItem.Text="Info";
             // 
             // aboutToolStripMenuItem
             // 
             aboutToolStripMenuItem.Name="aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size=new Size(136, 26);
+            aboutToolStripMenuItem.Size=new Size(167, 34);
             aboutToolStripMenuItem.Text="About";
             // 
             // githubToolStripMenuItem
             // 
             githubToolStripMenuItem.Name="githubToolStripMenuItem";
-            githubToolStripMenuItem.Size=new Size(136, 26);
+            githubToolStripMenuItem.Size=new Size(167, 34);
             githubToolStripMenuItem.Text="Github";
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name="exitToolStripMenuItem";
-            exitToolStripMenuItem.Size=new Size(136, 26);
+            exitToolStripMenuItem.Size=new Size(167, 34);
             exitToolStripMenuItem.Text="Exit";
             // 
             // gamesToolStripMenuItem
             // 
             gamesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { game1ToolStripMenuItem, game2ToolStripMenuItem, game3ToolStripMenuItem });
             gamesToolStripMenuItem.Name="gamesToolStripMenuItem";
-            gamesToolStripMenuItem.Size=new Size(68, 24);
+            gamesToolStripMenuItem.Size=new Size(82, 29);
             gamesToolStripMenuItem.Text="Games";
             // 
             // game1ToolStripMenuItem
             // 
             game1ToolStripMenuItem.Name="game1ToolStripMenuItem";
-            game1ToolStripMenuItem.Size=new Size(139, 26);
+            game1ToolStripMenuItem.Size=new Size(170, 34);
             game1ToolStripMenuItem.Text="Game1";
             // 
             // game2ToolStripMenuItem
             // 
             game2ToolStripMenuItem.Name="game2ToolStripMenuItem";
-            game2ToolStripMenuItem.Size=new Size(139, 26);
+            game2ToolStripMenuItem.Size=new Size(170, 34);
             game2ToolStripMenuItem.Text="Game2";
             // 
             // game3ToolStripMenuItem
             // 
             game3ToolStripMenuItem.Name="game3ToolStripMenuItem";
-            game3ToolStripMenuItem.Size=new Size(139, 26);
+            game3ToolStripMenuItem.Size=new Size(170, 34);
             game3ToolStripMenuItem.Text="Game3";
             // 
             // playerToolStripMenuItem
             // 
             playerToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { playerOverviewToolStripMenuItem });
             playerToolStripMenuItem.Name="playerToolStripMenuItem";
-            playerToolStripMenuItem.Size=new Size(63, 24);
+            playerToolStripMenuItem.Size=new Size(75, 29);
             playerToolStripMenuItem.Text="Player";
             // 
             // playerOverviewToolStripMenuItem
             // 
             playerOverviewToolStripMenuItem.Name="playerOverviewToolStripMenuItem";
-            playerOverviewToolStripMenuItem.Size=new Size(197, 26);
+            playerOverviewToolStripMenuItem.Size=new Size(239, 34);
             playerOverviewToolStripMenuItem.Text="Player Overview";
             playerOverviewToolStripMenuItem.Click+=playerOverviewToolStripMenuItem_Click;
             // 
             // teamToolStripMenuItem
             // 
             teamToolStripMenuItem.Name="teamToolStripMenuItem";
-            teamToolStripMenuItem.Size=new Size(59, 24);
+            teamToolStripMenuItem.Size=new Size(69, 29);
             teamToolStripMenuItem.Text="Team";
             // 
             // leagueToolStripMenuItem
             // 
             leagueToolStripMenuItem.Name="leagueToolStripMenuItem";
-            leagueToolStripMenuItem.Size=new Size(71, 24);
+            leagueToolStripMenuItem.Size=new Size(84, 29);
             leagueToolStripMenuItem.Text="League";
+            // 
+            // lblPlayerName1
+            // 
+            lblPlayerName1.AutoSize=true;
+            lblPlayerName1.Font=new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            lblPlayerName1.Location=new Point(312, 246);
+            lblPlayerName1.Name="lblPlayerName1";
+            lblPlayerName1.Size=new Size(105, 45);
+            lblPlayerName1.TabIndex=11;
+            lblPlayerName1.Text="label7";
             // 
             // MainWIndow
             // 
-            AutoScaleDimensions=new SizeF(8F, 20F);
+            AutoScaleDimensions=new SizeF(10F, 25F);
             AutoScaleMode=AutoScaleMode.Font;
-            ClientSize=new Size(1539, 844);
+            ClientSize=new Size(1924, 1055);
             Controls.Add(groupBox1);
             Controls.Add(groupBox2);
             Controls.Add(menuStrip1);
@@ -385,7 +396,6 @@
             Load+=MainWIndow_Load;
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -398,15 +408,14 @@
         #endregion
 
         private GroupBox groupBox2;
-        private Button button1;
+        private Button btnGetRandomPlayer1;
         private Label label2;
         private ComboBox cmxClubPlayer1;
         private Label label1;
         private ComboBox cmxLeaguePlayer1;
-        private PictureBox pictureBox1;
-        private Label label7;
-        private Label label8;
-        private Label label9;
+        private Label lblControl;
+        private Label lblDefend;
+        private Label lblAttack;
         private GroupBox groupBox1;
         private Button button2;
         private Label label3;
@@ -430,5 +439,7 @@
         private ToolStripMenuItem playerOverviewToolStripMenuItem;
         private ToolStripMenuItem teamToolStripMenuItem;
         private ToolStripMenuItem leagueToolStripMenuItem;
+        private ListBox lbxPlayer1;
+        private Label lblPlayerName1;
     }
 }

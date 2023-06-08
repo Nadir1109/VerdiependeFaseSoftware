@@ -62,5 +62,43 @@ namespace VerdiependeFaseSoftware
                 cmxClubPlayer1.Items.Clear();
             }
         }
+
+
+
+        private void btnGetRandomPlayer1_Click(object sender, EventArgs e)
+        {
+            if (cmxClubPlayer1.SelectedIndex >= 0)
+            {
+                string selectedClub = cmxClubPlayer1.SelectedItem.ToString();
+
+                List<Player> players = conn.GetPlayersByClub(selectedClub);
+
+                if (players.Count > 0)
+                {
+                    Random random = new Random();
+                    int randomIndex = random.Next(0, players.Count);
+
+                    Player randomPlayer = players[randomIndex];
+
+                    // Spelergegevens weergeven
+                    lblPlayerName1.Text = randomPlayer.Name;
+                    lblAttack.Text = randomPlayer.Attack.ToString();
+                    lblControl.Text = randomPlayer.Control.ToString();
+                    lblDefend.Text = randomPlayer.Defend.ToString();
+
+                    // Clear de ListBox en voeg de speler toe
+                    lbxPlayer1.Items.Clear();
+                    lbxPlayer1.Items.Add(randomPlayer.Name);
+                }
+                else
+                {
+                    MessageBox.Show("Er zijn geen spelers beschikbaar voor deze club.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecteer eerst een club.");
+            }
+        }
     }
 }

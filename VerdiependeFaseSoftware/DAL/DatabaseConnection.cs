@@ -164,8 +164,54 @@ namespace VerdiependeFaseSoftware
 
             return leagues;
         }
-        #region Haal Teams op
-        public List<Team> GetTeams()
+        public List<Player> GetPlayersByClub(string clubName)
+        {
+            List<Player> players = new List<Player>();
+
+            string query = "SELECT playerName, pAttack, pControl, pDefend, pPosition, pNationality, pRating " +
+                           "FROM Player " +
+                           "WHERE teamID IN (SELECT teamID FROM Team WHERE teamName = @ClubName)";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@ClubName", clubName);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Player player = new Player
+                    {
+                        Name = reader["playerName"].ToString(),
+                        Attack = Convert.ToInt32(reader["pAttack"]),
+                        Control = Convert.ToInt32(reader["pControl"]),
+                        Defend = Convert.ToInt32(reader["pDefend"]),
+                        Position = reader["pPosition"].ToString(),
+                        Nationality = reader["pNationality"].ToString(),
+                        Rating = Convert.ToInt32(reader["pRating"])
+                    };
+
+                    players.Add(player);
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error executing query: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return players;
+        }
+
+            #region Haal Teams op
+            public List<Team> GetTeams()
         {
             List<Team> teams = new List<Team>();
 
