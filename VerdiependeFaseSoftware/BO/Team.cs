@@ -11,6 +11,7 @@ namespace VerdiependeFaseSoftware.BO
         public List<Player> players = new List<Player>();
        
         public string Name { get; set; }
+        public int LeagueID { get; set; }
 
 
         public Team()

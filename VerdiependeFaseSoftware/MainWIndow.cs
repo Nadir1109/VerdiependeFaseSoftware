@@ -11,6 +11,7 @@ namespace VerdiependeFaseSoftware
         public MainWIndow()
         {
             InitializeComponent();
+            conn = new DatabaseConnection();
 
         }
 
@@ -42,17 +43,15 @@ namespace VerdiependeFaseSoftware
 
         private void cmxLeaguePlayer1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             if (cmxLeaguePlayer1.SelectedIndex >= 0)
             {
-                
                 string selectedLeague = cmxLeaguePlayer1.SelectedItem.ToString();
 
-                List<Team> teams = conn.GetTeamsByLeague(selectedLeague);
+                List<Team> teams = conn.GetTeamsWithLeague(selectedLeague);
 
-                
                 cmxClubPlayer1.Items.Clear();
 
-                
                 foreach (Team team in teams)
                 {
                     cmxClubPlayer1.Items.Add(team.Name);
@@ -60,17 +59,7 @@ namespace VerdiependeFaseSoftware
             }
             else
             {
-                // Geen competitie geselecteerd, haal alle clubs op uit de database
-                List<Team> teams = conn.GetTeams();
-
-                // ComboBox voor clubs leegmaken
                 cmxClubPlayer1.Items.Clear();
-
-                // ComboBox bijwerken met alle clubs
-                foreach (Team team in teams)
-                {
-                    cmxClubPlayer1.Items.Add(team.Name);
-                }
             }
         }
     }

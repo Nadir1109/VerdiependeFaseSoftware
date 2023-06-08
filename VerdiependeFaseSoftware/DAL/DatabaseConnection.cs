@@ -15,13 +15,14 @@ namespace VerdiependeFaseSoftware
     {
         private string connectionString = "Data Source=localhost;Initial Catalog=football;Integrated Security=True";
         private SqlConnection connection;
-
+        #region Constructor
         public DatabaseConnection()
         {
             connection = new SqlConnection(connectionString);
             Connect();
         }
-
+        #endregion
+        #region Connect
         public bool Connect()
         {
             try
@@ -35,13 +36,14 @@ namespace VerdiependeFaseSoftware
                 return false;
             }
         }
-
+        #endregion
+        #region Disconnect
         public void Disconnect()
         {
             connection.Close();
         }
-
-
+        #endregion
+        #region ExecuteQuery
         public SqlDataReader ExecuteQuery(string query)
         {
             try
@@ -58,6 +60,8 @@ namespace VerdiependeFaseSoftware
                 return null;
             }
         }
+        #endregion Einde ExecuteQuery
+
 
         public List<Team> GetTeamsWithLeagueInfo(string leagueName)
         {
@@ -79,14 +83,11 @@ namespace VerdiependeFaseSoftware
                 while (reader.Read())
                 {
                     string teamName = reader["teamName"].ToString();
-                    string league = reader["leagueName"].ToString();
-                    string country = reader["country"].ToString();
+
 
                     Team team = new Team
                     {
                         Name = teamName,
-                        LeagueName = league,
-                        Country = country
                     };
 
                     teams.Add(team);
@@ -105,10 +106,10 @@ namespace VerdiependeFaseSoftware
 
             return teams;
         }
-    
 
 
 
+        #region Haal Players op
         public List<Player> GetPlayers()
         {
             List<Player> players = new List<Player>();
@@ -137,6 +138,7 @@ namespace VerdiependeFaseSoftware
 
             return players;
         }
+        #endregion
 
         public List<League> GetLeagues()
         {
@@ -162,6 +164,7 @@ namespace VerdiependeFaseSoftware
 
             return leagues;
         }
+        #region Haal Teams op
         public List<Team> GetTeams()
         {
             List<Team> teams = new List<Team>();
@@ -184,6 +187,7 @@ namespace VerdiependeFaseSoftware
 
             return teams;
         }
+        #endregion
         /* public Fifa GetAll()
          {
              Fifa fifa = new Fifa();
@@ -234,6 +238,7 @@ namespace VerdiependeFaseSoftware
              }
              return fifa;
          }*/
+        #region Haal spelers en de team op
         public List<Team> GetTeamsWithPlayers()
         {
             List<Team> teams = new List<Team>();
@@ -284,6 +289,49 @@ namespace VerdiependeFaseSoftware
 
             return teams;
 
+        }
+        #endregion
+        public List<Team> GetTeamsWithLeague(string leagueName)
+        {
+            List<Team> teams = new List<Team>();
+
+            string query = "SELECT T.teamName, L.leagueName, L.country " +
+                           "FROM Team T " +
+                           "INNER JOIN League L ON T.leagueID = L.leagueID " +
+                           "WHERE L.leagueName = @LeagueName";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@LeagueName", leagueName);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string teamName = reader["teamName"].ToString();
+
+                    Team team = new Team
+                    {
+                        Name = teamName,
+                    };
+
+                    teams.Add(team);
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error executing query: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return teams;
         }
     }
 }
