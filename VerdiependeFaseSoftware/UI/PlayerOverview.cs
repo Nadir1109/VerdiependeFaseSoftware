@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using VerdiependeFaseSoftware.Classes;
+using VerdiependeFaseSoftware.BO;
 
 namespace VerdiependeFaseSoftware.UI
 {
@@ -18,52 +18,43 @@ namespace VerdiependeFaseSoftware.UI
         public PlayerOverview()
         {
             InitializeComponent();
+            _conn = new DatabaseConnection();
+
         }
 
         private void PlayerOverview_Load(object sender, EventArgs e)
         {
-            lvwPlayerOverview.Columns.Add("PlayerID", 100);
-            lvwPlayerOverview.Columns.Add("Playername", 100);
-            lvwPlayerOverview.Columns.Add("PAttack", 100);
-            lvwPlayerOverview.Columns.Add("Pcontrol", 100);
-            lvwPlayerOverview.Columns.Add("Pdefend", 100);
-            lvwPlayerOverview.Columns.Add("Pposition", 100);
-            lvwPlayerOverview.Columns.Add("Pnatonality", 100);
-            lvwPlayerOverview.Columns.Add("Prating", 100);
-            lvwPlayerOverview.Columns.Add("Team", 100);
+
+            lvwPlayerOverview.Columns.Add("Playername", 200);
+            lvwPlayerOverview.Columns.Add("Attack", 100);
+            lvwPlayerOverview.Columns.Add("Control", 100);
+            lvwPlayerOverview.Columns.Add("Defend", 100);
+            lvwPlayerOverview.Columns.Add("Position", 100);
+            lvwPlayerOverview.Columns.Add("Natonality", 100);
+            lvwPlayerOverview.Columns.Add("Rating", 100);
+            lvwPlayerOverview.Columns.Add("Team", 200);
             lvwPlayerOverview.View = View.Details;
 
-            _conn = new DatabaseConnection();
 
-            if (_conn.Connect())
+
+            List<Team> teams = _conn.GetTeamsWithPlayers();
+
+            foreach (Team team in teams)
             {
-                List<Player> players = _conn.GetPlayers();
-
-                foreach (Player player in players)
+                foreach (Player player in team.players)
                 {
-                    ListViewItem item = new ListViewItem(player.playerID.ToString());
-                    item.SubItems.Add(player.playerName);
-                    item.SubItems.Add(player.attack.ToString());
-                    item.SubItems.Add(player.control.ToString());
-                    item.SubItems.Add(player.defend.ToString());
-                    item.SubItems.Add(player.position);
-                    item.SubItems.Add(player.nationality);
-                    item.SubItems.Add(player.rating.ToString());
-                    item.SubItems.Add(player.teamID.ToString());
+                    ListViewItem item = new ListViewItem(player.Name);
+                    item.SubItems.Add(player.Attack.ToString());
+                    item.SubItems.Add(player.Control.ToString());
+                    item.SubItems.Add(player.Defend.ToString());
+                    item.SubItems.Add(player.Position);
+                    item.SubItems.Add(player.Nationality);
+                    item.SubItems.Add(player.Rating.ToString());
+                    item.SubItems.Add(team.Name); // Voeg de teamnaam toe aan de lijst
 
                     lvwPlayerOverview.Items.Add(item);
                 }
-
-                _conn.Disconnect();
             }
-            else
-            {
-                MessageBox.Show("Fout bij het verbinden met de database. Controleer uw databaseverbinding en probeer het opnieuw.");
-            }
-        }
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            _conn?.Disconnect();
         }
     }
 }

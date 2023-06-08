@@ -28,143 +28,133 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.githubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gamesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.game1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.game2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.game3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.playerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.playerOverviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.teamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.leagueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lvwPlayerOverview = new System.Windows.Forms.ListView();
-            this.menuStrip1.SuspendLayout();
-            this.SuspendLayout();
+            menuStrip1=new MenuStrip();
+            infoToolStripMenuItem=new ToolStripMenuItem();
+            aboutToolStripMenuItem=new ToolStripMenuItem();
+            githubToolStripMenuItem=new ToolStripMenuItem();
+            exitToolStripMenuItem=new ToolStripMenuItem();
+            gamesToolStripMenuItem=new ToolStripMenuItem();
+            game1ToolStripMenuItem=new ToolStripMenuItem();
+            game2ToolStripMenuItem=new ToolStripMenuItem();
+            game3ToolStripMenuItem=new ToolStripMenuItem();
+            playerToolStripMenuItem=new ToolStripMenuItem();
+            playerOverviewToolStripMenuItem=new ToolStripMenuItem();
+            teamToolStripMenuItem=new ToolStripMenuItem();
+            leagueToolStripMenuItem=new ToolStripMenuItem();
+            lvwPlayerOverview=new ListView();
+            menuStrip1.SuspendLayout();
+            SuspendLayout();
             // 
             // menuStrip1
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.infoToolStripMenuItem,
-            this.gamesToolStripMenuItem,
-            this.playerToolStripMenuItem,
-            this.teamToolStripMenuItem,
-            this.leagueToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1794, 33);
-            this.menuStrip1.TabIndex = 11;
-            this.menuStrip1.Text = "menuStrip1";
+            menuStrip1.ImageScalingSize=new Size(24, 24);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { infoToolStripMenuItem, gamesToolStripMenuItem, playerToolStripMenuItem, teamToolStripMenuItem, leagueToolStripMenuItem });
+            menuStrip1.Location=new Point(0, 0);
+            menuStrip1.Name="menuStrip1";
+            menuStrip1.Padding=new Padding(5, 2, 0, 2);
+            menuStrip1.Size=new Size(1435, 28);
+            menuStrip1.TabIndex=11;
+            menuStrip1.Text="menuStrip1";
             // 
             // infoToolStripMenuItem
             // 
-            this.infoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem,
-            this.githubToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(60, 29);
-            this.infoToolStripMenuItem.Text = "Info";
+            infoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aboutToolStripMenuItem, githubToolStripMenuItem, exitToolStripMenuItem });
+            infoToolStripMenuItem.Name="infoToolStripMenuItem";
+            infoToolStripMenuItem.Size=new Size(49, 24);
+            infoToolStripMenuItem.Text="Info";
             // 
             // aboutToolStripMenuItem
             // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(167, 34);
-            this.aboutToolStripMenuItem.Text = "About";
+            aboutToolStripMenuItem.Name="aboutToolStripMenuItem";
+            aboutToolStripMenuItem.Size=new Size(136, 26);
+            aboutToolStripMenuItem.Text="About";
             // 
             // githubToolStripMenuItem
             // 
-            this.githubToolStripMenuItem.Name = "githubToolStripMenuItem";
-            this.githubToolStripMenuItem.Size = new System.Drawing.Size(167, 34);
-            this.githubToolStripMenuItem.Text = "Github";
+            githubToolStripMenuItem.Name="githubToolStripMenuItem";
+            githubToolStripMenuItem.Size=new Size(136, 26);
+            githubToolStripMenuItem.Text="Github";
             // 
             // exitToolStripMenuItem
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(167, 34);
-            this.exitToolStripMenuItem.Text = "Exit";
+            exitToolStripMenuItem.Name="exitToolStripMenuItem";
+            exitToolStripMenuItem.Size=new Size(136, 26);
+            exitToolStripMenuItem.Text="Exit";
             // 
             // gamesToolStripMenuItem
             // 
-            this.gamesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.game1ToolStripMenuItem,
-            this.game2ToolStripMenuItem,
-            this.game3ToolStripMenuItem});
-            this.gamesToolStripMenuItem.Name = "gamesToolStripMenuItem";
-            this.gamesToolStripMenuItem.Size = new System.Drawing.Size(82, 29);
-            this.gamesToolStripMenuItem.Text = "Games";
+            gamesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { game1ToolStripMenuItem, game2ToolStripMenuItem, game3ToolStripMenuItem });
+            gamesToolStripMenuItem.Name="gamesToolStripMenuItem";
+            gamesToolStripMenuItem.Size=new Size(68, 24);
+            gamesToolStripMenuItem.Text="Games";
             // 
             // game1ToolStripMenuItem
             // 
-            this.game1ToolStripMenuItem.Name = "game1ToolStripMenuItem";
-            this.game1ToolStripMenuItem.Size = new System.Drawing.Size(170, 34);
-            this.game1ToolStripMenuItem.Text = "Game1";
+            game1ToolStripMenuItem.Name="game1ToolStripMenuItem";
+            game1ToolStripMenuItem.Size=new Size(139, 26);
+            game1ToolStripMenuItem.Text="Game1";
             // 
             // game2ToolStripMenuItem
             // 
-            this.game2ToolStripMenuItem.Name = "game2ToolStripMenuItem";
-            this.game2ToolStripMenuItem.Size = new System.Drawing.Size(170, 34);
-            this.game2ToolStripMenuItem.Text = "Game2";
+            game2ToolStripMenuItem.Name="game2ToolStripMenuItem";
+            game2ToolStripMenuItem.Size=new Size(139, 26);
+            game2ToolStripMenuItem.Text="Game2";
             // 
             // game3ToolStripMenuItem
             // 
-            this.game3ToolStripMenuItem.Name = "game3ToolStripMenuItem";
-            this.game3ToolStripMenuItem.Size = new System.Drawing.Size(170, 34);
-            this.game3ToolStripMenuItem.Text = "Game3";
+            game3ToolStripMenuItem.Name="game3ToolStripMenuItem";
+            game3ToolStripMenuItem.Size=new Size(139, 26);
+            game3ToolStripMenuItem.Text="Game3";
             // 
             // playerToolStripMenuItem
             // 
-            this.playerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.playerOverviewToolStripMenuItem});
-            this.playerToolStripMenuItem.Name = "playerToolStripMenuItem";
-            this.playerToolStripMenuItem.Size = new System.Drawing.Size(75, 29);
-            this.playerToolStripMenuItem.Text = "Player";
+            playerToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { playerOverviewToolStripMenuItem });
+            playerToolStripMenuItem.Name="playerToolStripMenuItem";
+            playerToolStripMenuItem.Size=new Size(63, 24);
+            playerToolStripMenuItem.Text="Player";
             // 
             // playerOverviewToolStripMenuItem
             // 
-            this.playerOverviewToolStripMenuItem.Name = "playerOverviewToolStripMenuItem";
-            this.playerOverviewToolStripMenuItem.Size = new System.Drawing.Size(239, 34);
-            this.playerOverviewToolStripMenuItem.Text = "Player Overview";
+            playerOverviewToolStripMenuItem.Name="playerOverviewToolStripMenuItem";
+            playerOverviewToolStripMenuItem.Size=new Size(197, 26);
+            playerOverviewToolStripMenuItem.Text="Player Overview";
             // 
             // teamToolStripMenuItem
             // 
-            this.teamToolStripMenuItem.Name = "teamToolStripMenuItem";
-            this.teamToolStripMenuItem.Size = new System.Drawing.Size(69, 29);
-            this.teamToolStripMenuItem.Text = "Team";
+            teamToolStripMenuItem.Name="teamToolStripMenuItem";
+            teamToolStripMenuItem.Size=new Size(59, 24);
+            teamToolStripMenuItem.Text="Team";
             // 
             // leagueToolStripMenuItem
             // 
-            this.leagueToolStripMenuItem.Name = "leagueToolStripMenuItem";
-            this.leagueToolStripMenuItem.Size = new System.Drawing.Size(84, 29);
-            this.leagueToolStripMenuItem.Text = "League";
+            leagueToolStripMenuItem.Name="leagueToolStripMenuItem";
+            leagueToolStripMenuItem.Size=new Size(71, 24);
+            leagueToolStripMenuItem.Text="League";
             // 
             // lvwPlayerOverview
             // 
-            this.lvwPlayerOverview.Location = new System.Drawing.Point(52, 70);
-            this.lvwPlayerOverview.Name = "lvwPlayerOverview";
-            this.lvwPlayerOverview.Size = new System.Drawing.Size(685, 315);
-            this.lvwPlayerOverview.TabIndex = 12;
-            this.lvwPlayerOverview.UseCompatibleStateImageBehavior = false;
+            lvwPlayerOverview.Location=new Point(42, 56);
+            lvwPlayerOverview.Margin=new Padding(2);
+            lvwPlayerOverview.Name="lvwPlayerOverview";
+            lvwPlayerOverview.Size=new Size(1073, 314);
+            lvwPlayerOverview.TabIndex=12;
+            lvwPlayerOverview.UseCompatibleStateImageBehavior=false;
             // 
             // PlayerOverview
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1794, 971);
-            this.Controls.Add(this.lvwPlayerOverview);
-            this.Controls.Add(this.menuStrip1);
-            this.Name = "PlayerOverview";
-            this.Text = "PlayerOverview";
-            this.Load += new System.EventHandler(this.PlayerOverview_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions=new SizeF(8F, 20F);
+            AutoScaleMode=AutoScaleMode.Font;
+            ClientSize=new Size(1435, 777);
+            Controls.Add(lvwPlayerOverview);
+            Controls.Add(menuStrip1);
+            Margin=new Padding(2);
+            Name="PlayerOverview";
+            Text="PlayerOverview";
+            Load+=PlayerOverview_Load;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
