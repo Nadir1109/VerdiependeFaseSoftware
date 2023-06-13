@@ -4,19 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VerdiependeFaseSoftware.BO
+namespace FIfaWithJSON.BO
 {
     public class Team
     {
-        public List<Player> players = new List<Player>();
-       
+        public List<Player> Players { get; private set; }
         public string Name { get; private set; }
-        public int LeagueID { get; set; }
 
-        public Team() { }
         public Team(string name)
         {
-            players = new List<Player>();
+            this.Name = name;
+            this.Players = new List<Player>();
         }
     }
 }

@@ -136,7 +136,7 @@
             lvwPlayerOverview.Location=new Point(42, 56);
             lvwPlayerOverview.Margin=new Padding(2);
             lvwPlayerOverview.Name="lvwPlayerOverview";
-            lvwPlayerOverview.Size=new Size(1073, 314);
+            lvwPlayerOverview.Size=new Size(620, 314);
             lvwPlayerOverview.TabIndex=12;
             lvwPlayerOverview.UseCompatibleStateImageBehavior=false;
             // 
