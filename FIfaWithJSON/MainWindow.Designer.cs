@@ -68,6 +68,8 @@
             btnDefendPlayer2=new Button();
             btnControlPlayer2=new Button();
             btnAttackPlayer2=new Button();
+            lblResultPlayer1=new Label();
+            lblResultPlayer2=new Label();
             menuStrip1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -192,7 +194,7 @@
             cmxClubPlayer2.Name="cmxClubPlayer2";
             cmxClubPlayer2.Size=new Size(146, 28);
             cmxClubPlayer2.TabIndex=7;
-            cmxClubPlayer2.SelectedIndexChanged+=cmxClubPlayer2_SelectedIndexChanged;
+            
             // 
             // label4
             // 
@@ -290,6 +292,7 @@
             btnDefendPlayer1.TabIndex=12;
             btnDefendPlayer1.Text="Defend";
             btnDefendPlayer1.UseVisualStyleBackColor=true;
+            btnDefendPlayer1.Click+=btnDefendPlayer1_Click;
             // 
             // btnControlPlayer1
             // 
@@ -299,6 +302,7 @@
             btnControlPlayer1.TabIndex=11;
             btnControlPlayer1.Text="Control";
             btnControlPlayer1.UseVisualStyleBackColor=true;
+            btnControlPlayer1.Click+=btnControlPlayer1_Click;
             // 
             // btnAttackPlayer1
             // 
@@ -308,6 +312,7 @@
             btnAttackPlayer1.TabIndex=10;
             btnAttackPlayer1.Text="Attack";
             btnAttackPlayer1.UseVisualStyleBackColor=true;
+            btnAttackPlayer1.Click+=btnAttackPlayer1_Click;
             // 
             // label2
             // 
@@ -327,8 +332,7 @@
             cmxClubPlayer1.Name="cmxClubPlayer1";
             cmxClubPlayer1.Size=new Size(146, 28);
             cmxClubPlayer1.TabIndex=7;
-            cmxClubPlayer1.SelectedIndexChanged+=cmxClubPlayer1_SelectedIndexChanged;
-            // 
+                      // 
             // label1
             // 
             label1.AutoSize=true;
@@ -433,11 +437,33 @@
             btnAttackPlayer2.Text="Attack";
             btnAttackPlayer2.UseVisualStyleBackColor=true;
             // 
+            // lblResultPlayer1
+            // 
+            lblResultPlayer1.AutoSize=true;
+            lblResultPlayer1.Font=new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            lblResultPlayer1.Location=new Point(724, 166);
+            lblResultPlayer1.Name="lblResultPlayer1";
+            lblResultPlayer1.Size=new Size(26, 31);
+            lblResultPlayer1.TabIndex=14;
+            lblResultPlayer1.Text="0";
+            // 
+            // lblResultPlayer2
+            // 
+            lblResultPlayer2.AutoSize=true;
+            lblResultPlayer2.Font=new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            lblResultPlayer2.Location=new Point(724, 261);
+            lblResultPlayer2.Name="lblResultPlayer2";
+            lblResultPlayer2.Size=new Size(26, 31);
+            lblResultPlayer2.TabIndex=15;
+            lblResultPlayer2.Text="0";
+            // 
             // frmFifa
             // 
             AutoScaleDimensions=new SizeF(8F, 20F);
             AutoScaleMode=AutoScaleMode.Font;
             ClientSize=new Size(1513, 696);
+            Controls.Add(lblResultPlayer2);
+            Controls.Add(lblResultPlayer1);
             Controls.Add(menuStrip1);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
@@ -496,5 +522,7 @@
         private Label label9;
         private Label label10;
         private Button btnStartGame;
+        private Label lblResultPlayer1;
+        private Label lblResultPlayer2;
     }
 }

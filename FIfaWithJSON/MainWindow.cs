@@ -7,6 +7,11 @@ namespace FIfaWithJSON
         private List<Player> allPlayers;
         private List<Team> teams;
         private bool gameStarted = false;
+        private Player selectedPlayer1;
+        private Player selectedPlayer2;
+        private bool player1Turn = true;
+        private bool player1Selected;
+        private bool player2Selected;
 
         public frmFifa()
         {
@@ -24,19 +29,17 @@ namespace FIfaWithJSON
             lvwPlayer1.View = View.Details;
             lvwPlayer2.View = View.Details;
         }
+
         private void FillComboBoxWithTeams()
         {
-
             cmxClubPlayer1.Items.Clear();
             cmxClubPlayer2.Items.Clear();
-
 
             List<string> teamNames = new List<string>();
             foreach (Team team in teams)
             {
                 teamNames.Add(team.Name);
             }
-
 
             cmxClubPlayer1.Items.AddRange(teamNames.ToArray());
             cmxClubPlayer2.Items.AddRange(teamNames.ToArray());
@@ -53,9 +56,9 @@ namespace FIfaWithJSON
             adidasTeam.Players.Add(new Player("Neymar Jr.", 91, 96, 88, "Forward", "Brazil", 90));
             adidasTeam.Players.Add(new Player("Kevin De Bruyne", 90, 78, 85, "Midfielder", "Belgium", 91));
             adidasTeam.Players.Add(new Player("Kylian Mbappé", 90, 97, 88, "Forward", "France", 94));
+
             teams.Add(teamNike);
             teams.Add(adidasTeam);
-
         }
 
         private void playerOverviewToolStripMenuItem_Click(object sender, EventArgs e)
@@ -66,19 +69,24 @@ namespace FIfaWithJSON
 
         private void btnGetRandomPlayer1_Click(object sender, EventArgs e)
         {
-            string selectedClub = cmxClubPlayer1.SelectedItem.ToString();
-
-            List<Player> players = GetPlayersByClub(selectedClub);
-            DisplayPlayersInListView(players, lvwPlayer1);
+            string selectedClub = cmxClubPlayer1.SelectedItem?.ToString();
+            if (!string.IsNullOrEmpty(selectedClub))
+            {
+                List<Player> players = GetPlayersByClub(selectedClub);
+                DisplayPlayersInListView(players, lvwPlayer1);
+            }
         }
 
         private void btnGetRandomPlayer2_Click(object sender, EventArgs e)
         {
-            string selectedClub = cmxClubPlayer2.SelectedItem.ToString();
-
-            List<Player> players = GetPlayersByClub(selectedClub);
-            DisplayPlayersInListView(players, lvwPlayer2);
+            string selectedClub = cmxClubPlayer2.SelectedItem?.ToString();
+            if (!string.IsNullOrEmpty(selectedClub))
+            {
+                List<Player> players = GetPlayersByClub(selectedClub);
+                DisplayPlayersInListView(players, lvwPlayer2);
+            }
         }
+
         private List<Player> GetPlayersByClub(string clubName)
         {
             List<Player> players = new List<Player>();
@@ -90,6 +98,7 @@ namespace FIfaWithJSON
 
             return players;
         }
+
         private void DisplayPlayersInListView(List<Player> players, ListView listView)
         {
             listView.Items.Clear();
@@ -121,6 +130,8 @@ namespace FIfaWithJSON
                 btnAttackPlayer1.Text = attack;
                 btnControlPlayer1.Text = control;
                 btnDefendPlayer1.Text = defend;
+                player1Selected = true;
+                DisablePlayer2Buttons();
             }
         }
 
@@ -137,13 +148,13 @@ namespace FIfaWithJSON
                 btnAttackPlayer2.Text = attack;
                 btnControlPlayer2.Text = control;
                 btnDefendPlayer2.Text = defend;
+                player2Selected = true;
+                DisablePlayer1Buttons();
             }
         }
 
         private void btnStartGame_Click(object sender, EventArgs e)
         {
-
-
             if (cmxClubPlayer1.SelectedItem == null || cmxClubPlayer2.SelectedItem == null)
             {
                 MessageBox.Show("Je hebt geen teams geselecteerd");
@@ -153,23 +164,67 @@ namespace FIfaWithJSON
                 gameStarted = true;
                 cmxClubPlayer1.Enabled = false;
                 cmxClubPlayer2.Enabled = false;
+
+                if (player1Selected)
+                {
+                    EnablePlayer1Buttons();
+                }
             }
         }
 
-        private void cmxClubPlayer1_SelectedIndexChanged(object sender, EventArgs e)
+        private void EnablePlayer1Buttons()
         {
-            string selectedClub = cmxClubPlayer1.SelectedItem.ToString();
-
-            List<Player> players = GetPlayersByClub(selectedClub);
-            DisplayPlayersInListView(players, lvwPlayer1);
+            btnAttackPlayer1.Enabled = true;
+            btnDefendPlayer1.Enabled = true;
+            btnControlPlayer1.Enabled = true;
         }
 
-        private void cmxClubPlayer2_SelectedIndexChanged(object sender, EventArgs e)
+        private void DisablePlayer1Buttons()
         {
-            string selectedClub = cmxClubPlayer2.SelectedItem.ToString();
+            btnAttackPlayer1.Enabled = false;
+            btnDefendPlayer1.Enabled = false;
+            btnControlPlayer1.Enabled = false;
+        }
 
-            List<Player> players = GetPlayersByClub(selectedClub);
-            DisplayPlayersInListView(players, lvwPlayer2);
+        private void EnablePlayer2Buttons()
+        {
+            btnAttackPlayer2.Enabled = true;
+            btnDefendPlayer2.Enabled = true;
+            btnControlPlayer2.Enabled = true;
+        }
+
+        private void DisablePlayer2Buttons()
+        {
+            btnAttackPlayer2.Enabled = false;
+            btnDefendPlayer2.Enabled = false;
+            btnControlPlayer2.Enabled = false;
+        }
+        private void btnAttackPlayer1_Click(object sender, EventArgs e)
+        {
+            if (gameStarted && player1Turn && !player1Selected)
+            {
+                // Code om de aanval van Player 1 uit te voeren
+
+                player1Selected = true;
+                btnAttackPlayer1.Enabled = false;
+                btnDefendPlayer1.Enabled = false;
+                btnControlPlayer1.Enabled = false;
+
+                if (player2Selected)
+                {
+                    EnablePlayer2Buttons();
+                }
+            }
+        }
+
+        private void btnControlPlayer1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDefendPlayer1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
